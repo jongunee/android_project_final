@@ -34,18 +34,15 @@ public class Detail extends AppCompatActivity {
     final static String KEY_ID = "_id";
     final static String KEY_CONTEXT = "context";
     final static String KEY_PRICE = "price";
-
     final static String KEY_PAY = "pay";
     final static String TABLE_NAME = "MyAccountList";
     final static String KEY_DATE = "date";
-
     public static String View_DATE = getToday_date();           // 날짜를 현재날짜로 초기화
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
         //데이터베이스 생성
         mHelper = new MyDBHelper(this);
         db = mHelper.getWritableDatabase();
@@ -59,6 +56,7 @@ public class Detail extends AppCompatActivity {
         btn_go_calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setResult(100);
                 finish();
             }
         });
@@ -130,7 +128,6 @@ public class Detail extends AppCompatActivity {
         String querySelectAll = String.format( "SELECT * FROM %s WHERE date = '%s'", TABLE_NAME, View_DATE);
         cursor = db.rawQuery( querySelectAll, null );
         myAdapter.changeCursor( cursor );
-        //myAdapter.notifyDataSetChanged();
 
         eContext.setText( "" );
         ePrice.setText( "" );

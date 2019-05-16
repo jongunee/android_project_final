@@ -31,7 +31,6 @@ public class CustomAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         LayoutInflater inflater = ma.getLayoutInflater();
         View view = inflater.inflate(layout, null);
         TextView day = view.findViewById(R.id.list_day);
@@ -40,7 +39,14 @@ public class CustomAdapter extends BaseAdapter {
         Button mainListBtn = view.findViewById(R.id.list_btn);
 
         day.setText(data.get(position).listDay);
-        money.setText(data.get(position).listMoney);
+
+        if(data.get(position).listMoney.equals("0")) {
+            money.setText("내역이 없습니다.");
+        }
+        else {
+            money.setText(data.get(position).listMoney);
+        }
+
         dayWeek.setText(data.get(position).listDayWeek);
 
         String dayParam = day.getText().toString();
@@ -54,7 +60,7 @@ public class CustomAdapter extends BaseAdapter {
             public void onClick(View v) {
                 Intent intent = new Intent(ma, Detail.class);
                 intent.putExtra("date", resDay);
-                ma.startActivity(intent);
+                ma.startActivityForResult(intent, 200);
             }
         });
 
