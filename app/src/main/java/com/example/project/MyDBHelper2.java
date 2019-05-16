@@ -11,13 +11,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.example.project.MainActivity.D_CONTENT;
-import static com.example.project.MainActivity.TABLE_DNAME;
-import static com.example.project.MainActivity.D_PK;
-import static com.example.project.MainActivity.D_TITLE;
-import static com.example.project.MainActivity.D_DATE;
-
-
 /**
  * Created by 1hk_s on 2018-06-07.
  */
