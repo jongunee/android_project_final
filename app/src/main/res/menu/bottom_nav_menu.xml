@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/baseline_today_black_18dp"
+        android:title="캘린더" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/baseline_list_black_18dp"
+        android:title="리스트형" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/baseline_chrome_reader_mode_black_18dp"
+        android:title="성찰일지" />
+
+</menu>
