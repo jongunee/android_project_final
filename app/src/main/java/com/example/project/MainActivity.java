@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
         /** 달력 일자 어뎁터 이용하여 getView로 전송 **/
         setCalendarDate(mCal.get(Calendar.MONTH) + 1);
-        gridAdapter = new GridAdapter(getApplicationContext(), dayList);
+        //gridAdapter = new GridAdapter(getApplicationContext(), dayList);
         gridView.setAdapter(gridAdapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
